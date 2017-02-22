@@ -8,6 +8,14 @@ $connection=new mysqli($server_address,$DBUsername,$DBPassword,$DBName);
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
+
+function mysql_escape($value){
+        global $connection ;
+        $value=mysqli_real_escape_string($connection,$value);
+        return $value;
+
+}
+
 function sql($query){
     global $connection;
     $data=array();

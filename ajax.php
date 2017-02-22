@@ -14,6 +14,11 @@ if ($_POST) {
     if (!$password) {
         $error[] = "please type your password";
     } elseif ($valid == true) {
+        $password = md5($password);
+        $password=mysql_escape($password);
+        $username=mysql_escape($username);
+
+
         $user = sql("SELECT * FROM users WHERE username='{$username}' AND password='{$password}'");
     }
     if ($user) {

@@ -38,10 +38,10 @@
                 </tr>
                 <?php foreach ($tasks as $key =>$val):?>
                 <tr>
-                    <td><?php echo $val['id']?></td>
-                    <td><?php echo $val['task']?></td>
+                    <td><?php echo htmlspecialchars($val['id'])?></td>
+                    <td><?php echo htmlspecialchars($val['task'])?></td>
                     <?php if($_SESSION['user_type']==0):?>
-                        <td><?php echo $val['username']?></td>
+                        <td><?php echo htmlspecialchars($val['username'])?></td>
                     <?php endif;?>
                 </tr>
 
