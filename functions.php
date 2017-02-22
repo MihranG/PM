@@ -38,6 +38,4 @@ function sql_arr($query){
 
 session_start();
 
-/*if ($_SESSION['user_id']) {
-    $user = sql_row("SELECT `name`, `email` FROM author WHERE id = {$_SESSION['user_id']}");
-}*/
+
