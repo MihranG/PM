@@ -5,7 +5,8 @@ $tasks = array();
 if ($_SESSION['user_type'] == 0) {
     $tasksquery = 'SELECT tasks.*, users.username FROM tasks
   LEFT JOIN users
-  on tasks.user_id=users.id';
+  on tasks.user_id=users.id
+  ORDER BY username';
     $tasks = sql_arr($tasksquery);
 } else {
     $tasksquery = "SELECT * FROM tasks
